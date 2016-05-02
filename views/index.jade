@@ -1,0 +1,27 @@
+extends layout
+
+block body
+  div(ng-controller='SurveyCtrl')
+    div.row.group(id="titleBar")
+        div.allCentered(id="titleText") Survey
+    div(ng-show="showQuestions")
+        div.row.group.allCentered.question {{questionBody}}
+        form.allCentered(name="surveyForm")
+
+            label(ng-repeat="answer in answers")
+                input(type="radio", name="surveyAnswer", value="Donald Trump", ng-model="answer")  
+                {{answer.answer_body}}
+
+            button.submit(type="submit", ng-click="submitSurvey(answer)").
+                Submit
+
+            button.skip(ng-click="skipQuestion()").
+                Skip
+    div.row.group.allCentered(ng-show="!showQuestions") There are no more questions for you to answer.
+
+  script(src='js/lib/angular/angular.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
