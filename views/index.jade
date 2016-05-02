@@ -6,15 +6,16 @@ block body
         div.allCentered(id="titleText") Survey
     div(ng-show="showQuestions")
         div.row.group.allCentered.question {{questionBody}}
-        form.allCentered(name="surveyForm")
+        form.allCentered(name="surveyForm", ng-submit="submitSurvey()")
 
-            label(ng-repeat="answer in answers")
-                input(type="radio", name="surveyAnswer", value="Donald Trump", ng-model="answer")  
-                {{answer.answer_body}}
+            div(ng-repeat="answer in answers")
+                label
+                    input(type="radio", name="surveyAnswer", ng-value="answer.answer_body", ng-model="$parent.selectedAnswer")  
+                    {{answer.answer_body}}
 
-            button.submit(type="submit", ng-click="submitSurvey(answer)").
+            button.submit(type="submit").
                 Submit
-
+                
             button.skip(ng-click="skipQuestion()").
                 Skip
     div.row.group.allCentered(ng-show="!showQuestions") There are no more questions for you to answer.

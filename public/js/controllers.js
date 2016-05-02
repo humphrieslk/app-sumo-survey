@@ -5,8 +5,6 @@
 angular.module('surveyApp.controllers', []).
 controller('SurveyCtrl', function ($scope, $http) {
 
-    var surveyCtrl = this;
-
     // make a request for how many questions there are and their rows
     $http.get('/questions').success(function (data, status, headers, config) {
         if (data == "") {
@@ -63,9 +61,9 @@ controller('SurveyCtrl', function ($scope, $http) {
     
     // not implemented yet 
     // will submit their survey and record answers into the database
-    $scope.submitSurvey = function (answer) {
+    $scope.submitSurvey = function () {
         console.log('submitted');
-        console.log($scope.answer);
+        console.log($scope.selectedAnswer);
         
     }
 });
