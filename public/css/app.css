@@ -28,3 +28,38 @@
   content: "";
   padding: 0;
 }
+
+.all-centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+a {
+    color: darkcyan;
+}
+
+nav {
+    background-color: cadetblue;
+    margin: 0;
+    padding: 0;
+}
+
+.title-text {
+    font-size: 36px;
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+}
+
+input, textarea, button {
+    font-family: 'Raleway', sans-serif;
+}
+
+.no-questions {
+    font-size: 24px;
+    margin: 20px;
+}

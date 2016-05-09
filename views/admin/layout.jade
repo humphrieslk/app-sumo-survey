@@ -1,0 +1,25 @@
+html(ng-app="surveyApp")
+  head
+    meta(charset='utf8')
+    base(href='/')
+    title Survey Admin
+    link(rel='stylesheet', href='/css/app.css')
+    link(rel='stylesheet', href='/css/admin.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+  body(ng-controller="NavCtrl")
+  
+    nav
+        div.container-fluid
+            div.col-xs-2.col-xs-offset-10.col-sm-1.col-sm-offset-11
+                    div.text-center 
+                        button.logout(ng-click="navigate('logout')") Logout
+            div.navbar-header.col-xs-12
+                div.text-center.title-text {{pageTitle}}
+            ul.navbar-nav
+                li(ng-repeat="page in pages")
+                        button.nav-button(ng-click="navigate(page.url)", ng-class="{active: navClass(page)}") {{page.title}}
+                
+    block body
+    
+    

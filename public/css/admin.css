@@ -1,0 +1,141 @@
+#logout {
+    float: right;
+    padding-right: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+thead tr td{
+    font-weight: bold;
+    padding: 10px;
+}
+
+tr {
+    padding: 5px;
+}
+
+td {
+    padding: 20px;
+}
+
+td.question {
+    width: 100%;
+    padding: 5px;
+}
+
+table.responses {
+    margin: auto;
+}
+
+table.responses tr td {
+    text-align: left;
+}
+
+tr.questionRow:hover, .expandedQuestion, .editingQuestion {
+    background-color: #BDD7D9;
+}
+
+.formInput {
+    display: block;
+    font-size: 18px;
+}
+
+.nav-button, .nav-button:focus, .logout, .logout:focus {
+    background-color: transparent;
+    color: white;
+    border-style: none;
+    outline: 0;     
+    outline-style:none;     
+    outline-width:0;
+}
+
+textarea.matchParent {
+    width: 100%;
+    height: auto;
+}
+
+.borderless {
+    border-collapse: none;
+    width: 100%;
+}
+
+.borderless td, .borderless th {
+    border: none;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+
+button.edit {
+    background: url('../assets/edit-icon.png') no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+button.expandAll {
+    float: right;
+}
+
+button.delete {
+    background: url('../assets/delete-icon.png') no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+button.delete:disabled {
+    opacity: 0.4;
+}
+
+button.addQuestion {
+    margin: 10px;
+}
+
+button.save {
+    margin: 10px;
+}
+
+.active {
+    opacity: 0.7;
+}
+
+.title-text {
+    line-height: 60px;
+}
+    
+ul.nav {
+    margin: 5px;
+}
+
+ul.navbar-nav li {
+    display: inline-block;
+        
+}
+
+@media screen and (max-width: 519px) {
+    ul.navbar-nav li {
+        font-size: 14px;
+        margin: 0 10px 5px 0px;  
+    }
+}
+
+@media screen and (min-width: 520px) {
+    ul.navbar-nav li {
+        font-size: 18px;
+        margin: 0 30px 5px 0px;  
+    }
+}
+
+ul.navbar-nav li a {
+    text-decoration: none;   
+    color: white;
+}
+
+ul.navbar-nav li a:hover { 
+    opacity: 0.7;
+}

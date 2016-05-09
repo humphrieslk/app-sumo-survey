@@ -6,20 +6,26 @@ angular.module('surveyApp', [
   'surveyApp.controllers',
   'surveyApp.filters',
   'surveyApp.services',
-  'surveyApp.directives'
+  'surveyApp.directives',
+  'ngRoute'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/survey', {
-      controller: 'SurveyCtrl'
+  when('/survey', {
+    controller: 'SurveyCtrl'
   }).
-//    when('/view2', {
-//      templateUrl: 'partials/partial2',
-//      controller: 'MyCtrl2'
-//    }).
-    otherwise({
-      redirectTo: '/survey'
-    });
+  when('/nigol', {
+    controller: 'LoginCtrl'
+  }).
+  when('/admin/manageSurveys', {
+    controller: 'ManageSurveysCtrl'
+  }).
+  when('/admin/viewResponses', {
+    controller: 'ViewResponsesCtrl'
+  }).
+  otherwise({
+    redirectTo: '/survey'
+  });
 
   $locationProvider.html5Mode(true);
 });

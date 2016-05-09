@@ -2,23 +2,24 @@ extends layout
 
 block body
   div(ng-controller='SurveyCtrl')
-    div.row.group(id="titleBar")
-        div.allCentered(id="titleText") Survey
-    div(ng-show="showQuestions")
-        div.row.group.allCentered.question {{questionBody}}
-        form.allCentered(name="surveyForm", ng-submit="submitSurvey()")
+    nav
+        div.container-fluid
+            div.navbar-header.col-xs-12
+                div.text-center.title-text Survey
+    div.container-fluid
+        div.survey(ng-show="showQuestion")
+            div.text-center.question {{question.question_body}}
+                    form.text-center(name="surveyForm", ng-submit="submitSurvey()")
+                        div.survey-block
+                            div.answers(ng-repeat="answer in answers")
+                                input(type="radio", name="surveyAnswer", ng-value="answer", ng-model="$parent.selectedAnswer", required)  
+                                span.answer-text{{answer.answer_body}}
+                            div
+                                button.submit(type="submit") Submit
 
-            div(ng-repeat="answer in answers")
-                label
-                    input(type="radio", name="surveyAnswer", ng-value="answer.answer_body", ng-model="$parent.selectedAnswer")  
-                    {{answer.answer_body}}
-
-            button.submit(type="submit").
-                Submit
-                
-            button.skip(ng-click="skipQuestion()").
-                Skip
-    div.row.group.allCentered(ng-show="!showQuestions") There are no more questions for you to answer.
+        div.text-center(ng-show="!showQuestion") 
+            div.col-xs-12.no-questions
+                {{noQuestionText}}
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
@@ -26,3 +27,4 @@ block body
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+  script(src='js/lib/angular/angular-route.js')
