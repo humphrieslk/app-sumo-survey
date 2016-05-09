@@ -127,6 +127,7 @@ app.set('models', require('./models'));
 
 app.get('/', function(req, res) {
     sess = req.session;
+    res.redirect('survey');
 });
 
 app.get('/survey', routes.index);
