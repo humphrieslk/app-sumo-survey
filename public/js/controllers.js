@@ -73,12 +73,11 @@ controller('SurveyCtrl', function ($scope, $http, $location, $window) {
   // get the survey question!
   $http.get('/surveyQuestion').success(function (data, status, headers, config) {
     if(status == 204) {
-      $scope.showQuestion = false;
       $scope.noQuestionText = 'Looks like you\'ve answered all the questions. Thanks!';
+      $scope.question = false;
     } else {
       $scope.question = data.question;
       $scope.answers = data.answers;
-      $scope.showQuestion = true;
     }
   }).error(function (data, status, headers, config) {
     console.log('Oops: could not get any data');

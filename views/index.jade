@@ -7,7 +7,7 @@ block body
             div.navbar-header.col-xs-12
                 div.text-center.title-text Survey
     div.container-fluid
-        div.survey(ng-show="showQuestion")
+        div.survey(ng-show="question")
             div.text-center.question {{question.question_body}}
                     form.text-center(name="surveyForm", ng-submit="submitSurvey()")
                         div.survey-block
@@ -17,7 +17,7 @@ block body
                             div
                                 button.submit(type="submit") Submit
 
-        div.text-center(ng-show="!showQuestion") 
+        div.text-center(ng-show="!question") 
             div.col-xs-12.no-questions
                 {{noQuestionText}}
 
