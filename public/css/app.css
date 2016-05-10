@@ -70,10 +70,6 @@ button {
     color: white;
 }
 
-span.answer-text {
-    padding: 20px;
-}
-
 /* XS devices */
 @media (max-width: 767px) {
     html body {
@@ -86,10 +82,13 @@ span.answer-text {
     html body {
         font-size: 50px;
     }
+    
+    span.answer-text {
+        padding: 20px;
+    }
 
     input[type="radio"], input[type="checkbox"] {
     	height: 50px;
-        height: auto;
     	width: 100%;
         vertical-align: middle;
     }

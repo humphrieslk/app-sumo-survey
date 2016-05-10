@@ -2,6 +2,10 @@
     font-size: 0.8em;
 }
 
+button.add-answer {
+    margin: auto;
+}
+
 thead tr td{
     font-weight: bold;
     padding: 10px;
