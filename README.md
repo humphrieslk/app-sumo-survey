@@ -8,7 +8,7 @@ which he or she can answer. Once answered, the question will not be presented to
 long as the session is active. When the user has answered all of the survey questions, the survey 
 page will tell the user that there are no more questions to answer. 
 
-An admin can login to an login secured interface where survey questions can be added, edited, and deleted. 
+An admin can login to a login secured interface where survey questions can be added, edited, and deleted. 
 He or she can also view responses for each of the survey questions. Unedited answers that belong 
 to an edited question will maintain response data. It is assumed that completely new questions
 will be added and not created through modification of an existing question. The admin can add as
