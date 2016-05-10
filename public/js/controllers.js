@@ -73,7 +73,7 @@ controller('SurveyCtrl', function ($scope, $http, $location, $window) {
   // get the survey question!
   $http.get('/surveyQuestion').success(function (data, status, headers, config) {
     if(status == 204) {
-      $scope.noQuestionText = 'Looks like you\'ve answered all the questions. Thanks!';
+      $scope.noQuestionText = 'You\'ve answered all the questions. Thanks!';
       $scope.question = false;
     } else {
       $scope.question = data.question;
@@ -200,6 +200,8 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
         getAnswers(question);
       }
       question.expanded = false;
+    } else {
+      question.expanded = true;
     }
   };
     

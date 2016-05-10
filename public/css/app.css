@@ -44,22 +44,130 @@ nav {
     padding: 0;
 }
 
-.title-text {
-    font-size: 36px;
-    color: white;
-}
-
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 24px;
 }
 
-input, textarea, button {
+input, textarea {
     font-family: 'Raleway', sans-serif;
 }
 
+button {
+    border-style: none;
+    padding: 5px;
+    margin: auto;
+    border-radius: 5px;
+}
+
 .no-questions {
-    font-size: 24px;
     margin: 20px;
+}
+
+
+.title-text {
+    font-size: 1.6em;
+    color: white;
+}
+
+span.answer-text {
+    padding: 20px;
+}
+
+/* XS devices */
+@media (max-width: 767px) {
+    html body {
+        font-size: 50px;
+    }    
+}
+
+/* SM/MD devices */
+@media (max-width: 991px) {
+    html body {
+        font-size: 50px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+    	height: 50px;
+        height: auto;
+    	width: 100%;
+        vertical-align: middle;
+    }
+    
+    button.edit {
+    	background: url('../assets/edit-icon-mobile.png') no-repeat;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+    }
+    
+    button.delete {
+        background: url('../assets/delete-icon-mobile.png') no-repeat;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        padding-right: 20px;
+        vertical-align: middle;
+    }
+    
+    .question, .answers {
+    	margin: 50px;
+    }
+    
+    .submit {
+    	margin: 100px;
+    }
+    
+    .borderless td {
+        padding-top: .5em;
+        padding-bottom: .5em;
+        line-height: 3em;
+    }
+    
+    table.responses {
+        font-size: 1.2em;
+        line-height: 1.3em;
+    }
+    
+}
+
+/* MD devices */
+@media (min-width: 992px) {
+    html body {
+        font-size: 24px;
+    }
+    
+    button.delete {
+        background: url('../assets/delete-icon.png') no-repeat;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+   
+    button.edit {
+        background: url('../assets/edit-icon.png') no-repeat;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    
+    table button {
+       font-size: 0.8em;
+    }
+    
+    .update-survey button {
+    	font-size: 0.6em;
+    }
+    
+    .borderless td {
+        line-height: 1.42857143em;
+    }
+}
+
+/* LG devices */
+@media (min-width: 1200px) {
+    html body {
+        font-size: 24px;
+    }
 }

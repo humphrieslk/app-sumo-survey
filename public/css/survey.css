@@ -1,6 +1,5 @@
 .question {
     line-height: 100px;
-    font-size: 24px;
 }
 
 .answers {
@@ -8,14 +7,8 @@
     width: auto; 
     margin-left: auto; 
     margin-right: auto;
-        line-height: 50px;
-    font-size: 18px;
+    line-height: 50px;
     font-weight: normal;
-}
-
-.survey-block {
-    width: 40%;
-    margin: auto;
 }
 
 label {
@@ -26,12 +19,9 @@ div.answers {
     margin-bottom: 20px;
 }
 
-span.answer-text {
-    padding: 20px;
-}
-
 .form-input {
     margin: 25px;
+    font-size: 0.9em;
 }
 
 .centered-element {
@@ -42,22 +32,6 @@ span.answer-text {
 button.submit {
     background-color: cadetblue;
     color: white;
-    border-style: none;
-    height: 30px;
-    margin: auto;
-    font-size: 14px;
-    line-height: 30px;
-
-}
-
-button.skip {
-    background-color: indianred;
-    color: white;
-    border-style: none;
-    width:10%;
-    
-}
-
-.title-text {
-    line-height: 75px;
+    line-height: 1.5em;
+    font-size: 1em;
 }

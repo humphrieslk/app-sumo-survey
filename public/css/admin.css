@@ -1,9 +1,5 @@
-#logout {
-    float: right;
-    padding-right: 5px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
+.logout {
+    font-size: 0.8em;
 }
 
 thead tr td{
@@ -38,7 +34,6 @@ tr.questionRow:hover, .expandedQuestion, .editingQuestion {
 
 .formInput {
     display: block;
-    font-size: 18px;
 }
 
 .nav-button, .nav-button:focus, .logout, .logout:focus {
@@ -58,41 +53,28 @@ textarea.matchParent {
 .borderless {
     border-collapse: none;
     width: 100%;
+    font-size: 0.8em;
 }
 
 .borderless td, .borderless th {
     border: none;
     padding: 8px;
-    line-height: 1.42857143;
     vertical-align: top;
 }
 
-
-button.edit {
-    background: url('../assets/edit-icon.png') no-repeat;
-    cursor: pointer;
-    border: none;
-    width: 20px;
-    height: 20px;
+.admin-table {
+    margin: 50px;
 }
 
-button.expandAll {
+button.expand-all {
     float: right;
-}
-
-button.delete {
-    background: url('../assets/delete-icon.png') no-repeat;
-    cursor: pointer;
-    border: none;
-    width: 20px;
-    height: 20px;
 }
 
 button.delete:disabled {
     opacity: 0.4;
 }
 
-button.addQuestion {
+button.add-question {
     margin: 10px;
 }
 
@@ -104,29 +86,20 @@ button.save {
     opacity: 0.7;
 }
 
-.title-text {
-    line-height: 60px;
-}
-    
-ul.nav {
-    margin: 5px;
-}
-
 ul.navbar-nav li {
     display: inline-block;
-        
+    font-size: 0.7em;       
 }
 
 @media screen and (max-width: 519px) {
     ul.navbar-nav li {
-        font-size: 14px;
         margin: 0 10px 5px 0px;  
     }
 }
 
 @media screen and (min-width: 520px) {
     ul.navbar-nav li {
-        font-size: 18px;
+/*        font-size: 18px;*/
         margin: 0 30px 5px 0px;  
     }
 }

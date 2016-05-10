@@ -3,14 +3,14 @@ extends layout
 block body
 
   div.container-fluid(ng-controller='ManageSurveysCtrl')
-        div.row
-            div.col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+        div.row.admin-table
+            div.col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
                 div(ng-show="questions")
                     table.borderless
                         thead  
                             tr
                                 td(colspan="3")
-                                    button.expandAll(ng-click="toggleAll()") {{toggleText}}
+                                    button.expand-all(ng-click="toggleAll()") {{toggleText}}
                             tr
                                 td
                                    a(href="admin/manageSurveys", ng-click="deleteQuestions()") Delete
@@ -41,9 +41,10 @@ block body
                 div(ng-show="!questions")
                     div.no-questions
                         {{noQuestionText}}
-        div.all-centered
-            button.addQuestion(type="button", ng-click="addQuestion()") Add Question
-            button.save(ng-click="save()") Save
+        div.row.update-survey
+            div.col-xs-12.all-centered
+                button.add-question(type="button", ng-click="addQuestion()") Add Question
+                button.save(ng-click="save()") Save
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
