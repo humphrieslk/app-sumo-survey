@@ -35,3 +35,22 @@ button.submit {
     line-height: 1.5em;
     font-size: 1em;
 }
+
+.progress-indicator {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 20px;
+}
+
+div.progress {
+    padding: 0;
+}
+
+div.progress-bar {
+    background-color: cadetblue;
+}
+
+.progress-text {
+    font-size: .7em;
+}

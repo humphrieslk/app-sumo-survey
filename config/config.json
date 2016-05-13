@@ -1,18 +1,19 @@
 {
-  "development": {
-    "username": "DATABASE_USERNAME",
-    "password": "DATABASE_PASSWORD",
-    "database": "DATABASE_NAME",
-    "host": "DATABASE_IP",
-    "dialect": "mysql",
-    "port": "3306"
-  },
-  "production": {
-    "username": "DATABASE_USERNAME",
-    "password": "DATABASE_PASSWORD",
-    "database": "DATABASE_NAME",
-    "host": "DATABASE_IP",
-    "dialect": "mysql",
-    "port": "3306"
-  }
+    "development": {
+	    "username": "DATABASE_USERNAME",
+            "password": "DATABASE_PASSWORD",
+            "database": "DATABASE_NAME",
+            "host": "DATABASE_IP",
+            "dialect": "mysql",
+            "port": "3306"
+    },
+    "production": {
+            "username": "DATABASE_USERNAME",
+            "password": "DATABASE_PASSWORD",
+            "database": "DATABASE_NAME",
+            "host": "DATABASE_IP",
+            "dialect": "mysql",
+            "port": "3306"
+    }
 }
+

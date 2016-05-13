@@ -75,12 +75,18 @@ controller('SurveyCtrl', function ($scope, $http, $location, $window) {
     if(status == 204) {
       $scope.noQuestionText = 'You\'ve answered all the questions. Thanks!';
       $scope.question = false;
+      $scope.percentage = 100;
+      $scope.percentageStyle = '100%';
     } else {
       $scope.question = data.question;
       $scope.answers = data.answers;
+      $scope.percentage = data.percentage;
+      $scope.percentageStyle = data.percentage + '%';
     }
   }).error(function (data, status, headers, config) {
     console.log('Oops: could not get any data');
+    $scope.percentage = 0; 
+    $scope.percentageStyle = '0%';
   });
     
   // will submit response and record answers into the database

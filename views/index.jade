@@ -18,9 +18,17 @@ block body
                                         span.answer-text{{answer.answer_body}}
                                 div
                                     button.submit(type="submit") Submit
+        div.row(ng-show="question")
+            div.row.progress-indicator
+                div.progress.col-xs-10.col-xs-offset-1.col-md-8.col-md-offset-2
+                    div.progress-bar(role="progressbar", aria-valuenow="{{percentage}}", aria-valuemin="0", aria-valuemax="100", style="width : {{percentageStyle}}")
+                div.text-center.progress-text.col-xs-10.col-xs-offset-1.col-md-8.col-md-offset-2
+                    {{percentage}}% Complete
+            
         div.row.text-center(ng-show="!question") 
             div.col-xs-12.no-questions
                 {{noQuestionText}}
+
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')

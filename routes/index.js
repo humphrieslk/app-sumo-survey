@@ -16,6 +16,7 @@ exports.getAnswers = function (req, res) {
 exports.getSurveyQuestion = function (req, res) {
   models.questions.findAndCountAll().then(function (findAllResponse) {    
     var questions = findAllResponse.rows;
+    var questionCount = findAllResponse.count;
     var questionIds = _.pluck(findAllResponse.rows, 'id');
     var result = {};
         
@@ -27,6 +28,7 @@ exports.getSurveyQuestion = function (req, res) {
             
       // array of just the question Ids of previously answered
       var previousResponses = _.pluck(responses, 'question_id');
+      var responseCount = responses.length;
             
       // remove any ids from previous responses from questionIds 
       previousResponses.forEach(function (questionId) {
@@ -50,6 +52,7 @@ exports.getSurveyQuestion = function (req, res) {
           }
         }).then(function (answers) {
           result.answers = answers;
+          result.percentage = Math.round(responseCount / questionCount * 100);
           res.json(result);
         }).catch(function (err) {
           console.log(err);                    
