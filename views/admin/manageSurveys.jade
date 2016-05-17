@@ -2,6 +2,8 @@ extends layout
 
 block body
 
+  script(src='js/lib/angular/angular.js')
+  
   div.container-fluid(ng-controller='ManageSurveysCtrl', ng-cloak)
         div.row.admin-table
             div.col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
@@ -46,7 +48,6 @@ block body
                 button.add-question(type="button", ng-click="addQuestion()") Add Question
                 button.save(ng-click="save()") Save
 
-  script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
   script(src='js/services.js')
   script(src='js/controllers.js')

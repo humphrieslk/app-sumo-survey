@@ -1,6 +1,9 @@
 extends layout
 
 block body
+
+  script(src='js/lib/angular/angular.js')
+
   div(ng-controller='SurveyCtrl', ng-cloak)
     nav
         div.container-fluid
@@ -12,7 +15,7 @@ block body
                 div.text-center.question {{question.question_body}}
                         form.text-center(name="surveyForm", ng-submit="submitSurvey()")
                                 div.row.answers(ng-repeat="answer in answers")
-                                    div.col-xs-2.col-md-1.col-md-offset-4
+                                    div.col-xs-2.col-md-1.col-md-offset-4.text-center
                                         input(type="radio", name="surveyAnswer", ng-value="answer", ng-model="$parent.selectedAnswer", required)  
                                     div.col-xs-10.col-md-3
                                         span.answer-text{{answer.answer_body}}
@@ -30,7 +33,6 @@ block body
                 {{noQuestionText}}
 
 
-  script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
   script(src='js/services.js')
   script(src='js/controllers.js')

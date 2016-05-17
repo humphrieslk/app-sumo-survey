@@ -137,6 +137,10 @@ button {
         font-size: 24px;
     }
     
+    div input[type="radio"], input[type="checkbox"] {
+    	margin: .7em;
+    }
+    
     button.delete {
         background: url('../assets/delete-icon.png') no-repeat;
         cursor: pointer;
@@ -161,6 +165,10 @@ button {
     
     .borderless td {
         line-height: 1.42857143em;
+    }
+    
+    .answer-text {
+        float: top;
     }
 }
 
