@@ -2,8 +2,16 @@
     font-size: 0.8em;
 }
 
+textarea {
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+}
+
 button.add-answer {
-    margin: auto;
+    margin: 5px;
+    background-color: #BCD7D9;
+    padding: 3px 20px;
+    box-shadow: 1px 1px 1px #979797;
 }
 
 thead tr td{
@@ -40,6 +48,16 @@ tr.questionRow:hover, .expandedQuestion, .editingQuestion {
     display: block;
 }
 
+input.edit-answer {
+/*    border-style: groove;*/
+    border: 1px solid #CCCCCC;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: .8em;
+    width: 50%;
+    border-width: thin;
+}
+
 .nav-button, .nav-button:focus, .logout, .logout:focus {
     background-color: transparent;
     color: white;
@@ -72,18 +90,17 @@ textarea.matchParent {
 
 button.expand-all {
     float: right;
+    box-shadow: 1px 1px 1px #979797;
 }
 
 button.delete:disabled {
     opacity: 0.4;
 }
 
-button.add-question {
+button.add-question, button.save {
     margin: 10px;
-}
-
-button.save {
-    margin: 10px;
+    box-shadow: 1px 1px 1px #979797;
+    width: 150px;
 }
 
 .active {

@@ -35,9 +35,9 @@ block body
                                         {{answer.answer_body}}
                             tr(ng-show="question.edit") 
                                 td
-                                td(colspan="2")
+                                td.text-center(colspan="2")
                                     div(ng-repeat="answer in question.answers")
-                                        input(type="text", ng-model="answer.answer_body", placeholder="Hershey's")
+                                        input.edit-answer(type="text", ng-model="answer.answer_body", placeholder="Hershey's")
                                         button.delete(type="button", ng-click="deleteAnswer($index, question.answers)", ng-disabled="question.answers.length == 1")
                                     button.add-answer(type="button", ng-click="addAnswer(question.answers)") Add Answer
                 div(ng-show="!questions")

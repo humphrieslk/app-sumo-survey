@@ -171,37 +171,57 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
   });
     
   $scope.toggleAll = function toggleAll() {
-    expanded = !expanded; 
-    if(expanded) {
-      $scope.toggleText = 'Collapse';
-      $scope.questions.forEach(function (question) {
-        question.expanded = true;
-        getAnswers(question);
-      });
-    } else {
-      $scope.toggleText = 'Expand';
-      $scope.questions.forEach(function (question) {
-        question.expanded = false;
-        getAnswers(question);
-      });
-    }
+    // check to see if questions are being edited
+    var questionsInEdit = false;
+    $scope.questions.forEach(function (question) {
+        if(question.edit) {
+            questionsInEdit = true;
+        }
+    });
+     
+    // only toggle if no questions are being edited
+    if(!questionsInEdit){
+        expanded = !expanded; 
+        
+        // change based on expanded or collapsed 
+        if(expanded) {
+          $scope.toggleText = 'Collapse';
+          $scope.questions.forEach(function (question) {
+            question.expanded = true;
+            getAnswers(question);
+          });
+        } else {
+          $scope.toggleText = 'Expand';
+          $scope.questions.forEach(function (question) {
+            question.expanded = false;
+            getAnswers(question);
+          });
+        }
+    }  
   };
     
   $scope.toggleRow = function toggleRow(question) {
+    // if question isn't being edited - can toggle to see answers
     if(!question.edit) {
       question.expanded = !question.expanded;
+        
+      // if the questions answers haven't been loaded yet, then load them
       if(!question.answers) {
         getAnswers(question);
       }
     }
   };
-    
+
   $scope.toggleEdit = function toggleEdit(question) {
     question.edit = !question.edit;
+      
+    // mark the questions as having been edited - to save later
     question.edited = true;
     UnsavedData.unsavedData = true;
-        
+
     if(question.edit) {
+        
+      // if we're editing the question, make sure the answers exist
       if(!question.answers) {
         getAnswers(question);
       }
@@ -212,6 +232,8 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
   };
     
   $scope.save = function save() {
+    
+    // loop through each of the questions and save the values if they've been edited
     $scope.questions.forEach(function(question) {
       if(question.edited) {
         $http.post('/admin/updateSurvey', {
@@ -244,7 +266,8 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
           questionIds.push(q.id);
         } 
       });
-            
+    
+      // if there are questions left to delete - that exist in the db
       if(questionIds.length > 0) {
         $http.post('/admin/deleteQuestions', {
           questionIds: questionIds
@@ -271,6 +294,8 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
     if(!$scope.questions) {
       $scope.questions = [];
     }
+
+    // add a new question with blank data 
     UnsavedData.unsavedData = true;
     $scope.questions.push({
       question_body: '', 
@@ -285,6 +310,8 @@ controller('ManageSurveysCtrl', function ($scope, $http, $location, $window, Uns
 controller('ViewResponsesCtrl', function ($scope, $http, $location) {
   var expanded;
   var getResponseCounts = function (question) {
+    
+    // for each answer, retrieve the response counts
     question.answers.forEach(function (answer) {
       $http.post('/admin/getResponseCounts', {
         answer_id: answer.id
@@ -296,7 +323,8 @@ controller('ViewResponsesCtrl', function ($scope, $http, $location) {
     });
   };
   $scope.toggleText = 'Expand';
-    
+
+  // retrieve the questions to display in the table 
   $http.get('/admin/getQuestions').success(function (data, status, headers, config) {
     $scope.questions = data;
     if(isEmptyObject(data)) {
@@ -324,13 +352,14 @@ controller('ViewResponsesCtrl', function ($scope, $http, $location) {
       $scope.toggleText = 'Collapse';
       $scope.questions.forEach(function (question) {
         question.expanded = true;
+          
+        // get the answers - even if they exist the responses may have changed
         $scope.getAnswers(question);
       });
     } else {
       $scope.toggleText = 'Expand';
       $scope.questions.forEach(function (question) {
         question.expanded = false;
-        $scope.getAnswers(question);
       });
     }
   };
