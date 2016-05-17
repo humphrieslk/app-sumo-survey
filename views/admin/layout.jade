@@ -7,7 +7,8 @@ html(ng-app="surveyApp")
     link(rel='stylesheet', href='/css/admin.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
-  body(ng-controller="NavCtrl")
+    script(src='js/lib/angular/angular.js')
+  body(ng-controller="NavCtrl", ng-cloak)
   
     nav
         div.container-fluid
