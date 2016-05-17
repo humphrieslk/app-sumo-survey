@@ -111,6 +111,10 @@ button {
         vertical-align: middle;
     }
     
+    input.edit-answer {
+        width: 75%;
+    }
+    
     .question, .answers {
     	margin: 50px;
     }
@@ -128,6 +132,10 @@ button {
     table.responses {
         font-size: 1.2em;
         line-height: 1.3em;
+    }
+    
+    button.add-question, button.save {
+        width: 45%;
     }
     
 }
@@ -156,6 +164,10 @@ button {
         height: 20px;
     }
     
+    input.edit-answer {
+        width: 50%;
+    }
+    
     table button {
        font-size: 0.8em;
     }
@@ -170,6 +182,10 @@ button {
     
     .answer-text {
         float: top;
+    }
+    
+    button.add-question, button.save {
+        width: 150px;
     }
 }
 

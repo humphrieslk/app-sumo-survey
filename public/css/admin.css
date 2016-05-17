@@ -49,12 +49,10 @@ tr.questionRow:hover, .expandedQuestion, .editingQuestion {
 }
 
 input.edit-answer {
-/*    border-style: groove;*/
     border: 1px solid #CCCCCC;
     margin: 5px;
     border-radius: 3px;
     font-size: .8em;
-    width: 50%;
     border-width: thin;
 }
 
@@ -100,7 +98,6 @@ button.delete:disabled {
 button.add-question, button.save {
     margin: 10px;
     box-shadow: 1px 1px 1px #979797;
-    width: 150px;
 }
 
 .active {
