@@ -11,7 +11,7 @@ controller('NavCtrl', function ($scope, $http, $location, $window, UnsavedData) 
   $scope.location = $location.path();
     
   $scope.pages = [{
-    title: 'Manage Surveys',
+    title: 'Manage Survey',
     url: '/admin/manageSurveys'
   }, {
     title: 'View Responses', 
