@@ -13,9 +13,9 @@ block body
                 div.text-center.question {{question.question_body}}
                         form.text-center(name="surveyForm", ng-submit="submitSurvey()")
                                 div.row.answers(ng-repeat="answer in answers")
-                                    div.col-xs-2.col-md-1.col-md-offset-4.text-center
+                                    div.col-xs-2.col-md-1.col-md-offset-3.text-center
                                         input(type="radio", name="surveyAnswer", ng-value="answer", ng-model="$parent.selectedAnswer", required)  
-                                    div.col-xs-10.col-md-3
+                                    div.col-xs-10.col-md-5
                                         span.answer-text{{answer.answer_body}}
                                 div
                                     button.submit(type="submit") Submit
